@@ -1,4 +1,7 @@
 #!/bin/bash
+echo "Deleting Key Pair"
+aws ec2 delete-key-pair --key-name EKS-workers
+rm -f ~/.ssh/id-eks.pem
 echo "Deleting Service Role"
 aws cloudformation delete-stack --stack-name eks-service-role
 sleep 10
